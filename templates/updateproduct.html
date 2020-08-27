@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>The IT MAN</title>
+ <style>
+
+ </style>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="static/style.css" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h2><a href="index.html">THE IT<span class="logo_colour">MAN</span></a></h2>
+          <h1>Renewal Management System</h1>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="dropdown"><a href="{{ url_for('homemain') }}">Home</a></li>
+          <li><div class="dropdown">
+<button class="dropbtn">PRODUCTS</button>
+<div class="dropdown-content">
+
+<a href="{{ url_for('product') }}">New Product</a>
+<a href="{{ url_for('updateproduct') }}">Update</a>
+<a href="{{ url_for('viewproduct') }}">View</a>
+<a href="{{ url_for('delete') }}">Delete</a>
+
+</div>
+</div></li>
+          <li><div class="dropdown">
+<button class="dropbtn">VENDOR</button>
+<div class="dropdown-content">
+
+<a href="{{ url_for('vendorreg') }}">New Vendor</a>
+<a href="{{ url_for('updatevendor') }}">Update</a>
+<a href="{{ url_for('allvendordetails') }}">View</a>
+
+</div>
+</div></li>
+          <li><div class="dropdown">
+<button class="dropbtn">CUSTOMER</button>
+<div class="dropdown-content">
+
+<a href="{{ url_for('customerreg') }}">New Customer</a>
+<a href="{{ url_for('updatecustomer') }}">Update</a>
+<a href="{{ url_for('custdetails') }}">View</a>
+<a href="{{ url_for('deletecustomer') }}">Delete</a>
+<a href="{{ url_for('customerproduct') }}">Product</a>
+
+</div>
+</div></li>
+
+          <li><a href="{{ url_for('renewal') }}">Renewal</a></li>
+        </ul>
+      </div>
+    </div>
+    
+	<center><div class="ex">
+		<form name="form1" action="/upproduct" method="post">
+  
+
+
+			<table style="with: 50%">
+				
+				<tr>
+					<td>Select Product Id </td>
+                                        <td> <select name="pid">
+        {% for row in data %} 
+             
+                {% for d in row %}
+                 <option>{{ d }}</option>
+                {% endfor %}
+             
+ 
+            
+       {% endfor %}
+
+                                            </select></td>
+
+	</td>				
+				</tr>
+                                <br><br><br><br><input type="submit" value="Update" />
+		</form>	</center>
+</body>
+</html>

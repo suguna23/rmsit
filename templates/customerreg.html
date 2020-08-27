@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>The IT MAN</title>
+
+
+ </style>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+          <link rel="stylesheet" href="/static/style.css" type="text/css">
+</style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h2><a href="index.html">THE IT<span class="logo_colour">MAN</span></a></h2>
+          <h1>Renewal Management System</h1>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="dropdown"><a href="{{ url_for('homemain') }}">Home</a></li>
+          <li><div class="dropdown">
+<button class="dropbtn">PRODUCTS</button>
+<div class="dropdown-content">
+
+<a href="{{ url_for('product') }}">New Product</a>
+<a href="{{ url_for('updateproduct') }}">Update</a>
+<a href="{{ url_for('viewproduct') }}">View</a>
+<a href="{{ url_for('delete') }}">Delete</a>
+
+</div>
+</div></li>
+          <li><div class="dropdown">
+<button class="dropbtn">VENDOR</button>
+<div class="dropdown-content">
+
+<a href="{{ url_for('vendorreg') }}">New Vendor</a>
+<a href="{{ url_for('updatevendor') }}">Update</a>
+<a href="{{ url_for('allvendordetails') }}">View</a>
+
+</div>
+</div></li>
+          <li><div class="dropdown">
+<button class="dropbtn">CUSTOMER</button>
+<div class="dropdown-content">
+
+<a href="{{ url_for('customerreg') }}">New Customer</a>
+<a href="{{ url_for('updatecustomer') }}">Update</a>
+<a href="{{ url_for('custdetails') }}">View</a>
+<a href="{{ url_for('deletecustomer') }}">Delete</a>
+<a href="{{ url_for('customerproduct') }}">Product</a>
+
+</div>
+</div></li>
+
+          <li><a href="{{ url_for('renewal') }}">Renewal</a></li>
+        </ul>
+      </div>
+    </div>
+<form name="f2" action="/customer" method=post>
+<center>
+<table cellpadding=2 cellspacing=1 border="1" bgcolor="lightblue">
+<th bgcolor="lightblue" colspan=2>
+<font size=5>Customer Registration</font>
+<br>
+<font size=2 color="red"><sup>*</sup> Required Fields</font>
+</th>
+<tr bgcolor="lightblue">
+<td valign=top> 
+<b>First Name<sup>*</sup></b> 
+<br>
+<input type="text" name="firstname" size=20 maxlength=20></td>
+<td valign=top>
+<b>Last Name<sup>*</sup></b>
+<br>
+<input type="text" name="lastname" size=15 maxlength=20></td>
+</tr>
+<tr bgcolor="lightblue">
+<td valign=top>
+<b>E-Mail<sup>*</sup></b> 
+<br>
+<input type="text" name="email" size=25 maxlength=125>
+<br></td>
+<td valign=top>
+<b>Zip Code<sup>*</sup></b> 
+<br>
+<input type="text" name="zip" size=10 maxlength=8></td>
+</tr>
+<tr bgcolor="lightblue">
+<td valign=top colspan=2>
+<b>Company Name<sup>*</sup></b>
+<br>
+<input type="text" name="compname" size=20 maxlength=50>
+</td>
+</tr>
+<tr bgcolor="lightblue">
+    
+<td valign=top>
+<b><sup>*Contact No</sup></b> 
+<br>
+<input type="text" name="cno" size=20 maxlength=10></td>
+<td valign=top>
+<b><sup>Buy Products/Services*</sup></b>
+<br>
+<input type="text" name="buyser" size=20 maxlength=10></td>
+<br>
+</tr>
+<tr bgcolor="lightblue">
+<td valign=top colspan=2>
+<b>What Type of industry do u have?</b>
+<br>
+<input type="checkbox" name="fave" value="Information Technology">Information Technology
+<input type="checkbox" name="fave" value="Automobile">Automobile
+<input type="checkbox" name="fave" value="Banking">Banking<br>
+<input type="checkbox" name="fave" value="Education and Training">Education and Training
+<input type="checkbox" name="fave" value="Financial">Financial
+<input type="checkbox" name="fave" value="Healthcare">Healthcare<br>
+</td>
+</tr>
+<tr bgcolor="lightblue">
+<td valign=top colspan=2>
+<b>Would you like to receive e-mail notifications on our special 
+sales?</b>
+<br>
+<input type="radio" name="notify" value="Yes" checked>Yes 
+
+<input type="radio" name="notify" value="No" > No 
+<br><br></td>
+</tr>
+<tr bgcolor="lightblue">
+<td align=center colspan=2>
+<input type="submit" value="Submit"> <input type="reset"  value="Reset">
+</td>
+</tr>
+</table>
+</center>
+</form>
+</body>
+</html>

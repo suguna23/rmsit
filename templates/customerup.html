@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>The IT MAN</title>
+
+
+ </style>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+          <link rel="stylesheet" href="/static/style.css" type="text/css">
+</style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h2><a href="index.html">THE IT<span class="logo_colour">MAN</span></a></h2>
+          <h1>Renewal Management System</h1>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="dropdown"><a href="{{ url_for('homemain') }}">Home</a></li>
+          <li><div class="dropdown">
+<button class="dropbtn">PRODUCTS</button>
+<div class="dropdown-content">
+
+<a href="{{ url_for('product') }}">New Product</a>
+<a href="{{ url_for('updateproduct') }}">Update</a>
+<a href="{{ url_for('viewproduct') }}">View</a>
+<a href="{{ url_for('delete') }}">Delete</a>
+
+</div>
+</div></li>
+          <li><div class="dropdown">
+<button class="dropbtn">VENDOR</button>
+<div class="dropdown-content">
+
+<a href="{{ url_for('vendorreg') }}">New Vendor</a>
+<a href="{{ url_for('updatevendor') }}">Update</a>
+<a href="{{ url_for('allvendordetails') }}">View</a>
+
+</div>
+</div></li>
+          <li><div class="dropdown">
+<button class="dropbtn">CUSTOMER</button>
+<div class="dropdown-content">
+
+<a href="{{ url_for('customerreg') }}">New Customer</a>
+<a href="{{ url_for('updatecustomer') }}">Update</a>
+<a href="{{ url_for('custdetails') }}">View</a>
+<a href="{{ url_for('deletecustomer') }}">Delete</a>
+<a href="{{ url_for('customerproduct') }}">Product</a>
+
+</div>
+</div></li>
+
+          <li><a href="{{ url_for('renewal') }}">Renewal</a></li>
+        </ul>
+      </div>
+    </div>
+	<div class="ex">
+		<form name="form1" action="customeru" method="post">
+                   
+    
+<center><table style="with: 50%">
+                      {% for d in data %}
+				<tr>
+					<td>CustomerId ID</td>
+					<td><input type="text" name="cid" value="{{d[0]}}" /></td>
+				</tr>
+				<tr>
+					<td> First Name</td>
+                                        <td><input type="text" name="fname" value="{{d[1]}}"/></td>
+
+					
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input type="text" name="lname" value="{{d[2]}}"/></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="text" name="email" value="{{d[3]}}"/></td>
+				</tr>
+				<tr>
+					<td>Zip</td>
+					<td><input type="text" name="zip" value="{{d[4]}}"/></td>
+				</tr>
+				<tr>
+					<td>Company Name</td>
+					<td><input type="text" name="uname" value="{{d[5]}}"/></td>
+				</tr>
+				<tr>
+					<td>Contact Number</td>
+					<td><input type="text" name="cno" value="{{d[6]}}"/></td>
+				</tr>
+                                <tr>
+					<td>Products/Services</td>
+					<td><input type="text" name="buy" value="{{d[7]}}" /></td>
+				</tr>
+                                 <tr>
+					<td>Technical Department</td>
+					<td><input type="text" name="tech" value="{{d[8]}}" /></td>
+				</tr>
+                                <tr>
+					<td>Notify</td>
+					<td><input type="text" name="notify" value="{{d[9]}}" /></td>
+				</tr>
+                                
+                                 			</table>
+                                      {% endfor %}
+                       </center>
+			<center><input type="submit" value="Update Customer" /><center>
+		</form>
+
+</TABLE><TABLE>
+</body>
+</html>

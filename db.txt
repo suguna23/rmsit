@@ -1,0 +1,35 @@
+create table employee (
+eno INT AUTO_INCREMENT PRIMARY KEY,
+ename varchar(20),
+address varchar(200),
+cno int(10),
+jobloc varchar(20),
+desig varchar(20),
+email varchar(20),
+);
+
+ALTER TABLE employee CHANGE cno cno VARCHAR;
+
+create table work (
+eno INT  PRIMARY KEY,
+ename varchar(20),
+date date,
+work varchar(200),
+);
+
+
+
+        pip install flask-mail
+
+
+
+sudo apt install python3-dev libpython3-dev
+
+sudo apt install python3.6-dev libpython3.6-dev
+sudo apt-get install mysql-server
+virtualenv -p python3.6 venv
+source venv/bin/activate
+pip3 install flask
+pip3 install flask-mysqldb
+
+
